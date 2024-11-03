@@ -9,8 +9,10 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-// Set up MySQL connection
-const sequelize = new Sequelize(process.env.DB_URI);
+// Set up MySQL connection with dialect specified
+const sequelize = new Sequelize(process.env.DB_URI, {
+  dialect: 'mysql', // Specify the dialect
+});
 
 // Test the database connection
 sequelize.authenticate()
