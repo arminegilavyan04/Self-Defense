@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 // Set up MySQL connection with dialect specified
-const sequelize = new Sequelize(process.env.DB_URI, {
+const sequelize = new Sequelize(process.env.MYSQL_URL, {
   dialect: 'mysql', // Specify the dialect
 });
 
